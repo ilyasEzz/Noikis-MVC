@@ -1,7 +1,7 @@
 <?php 
 /*
  * Base Controller
- * Loads the Models and V iews
+ * Loads the Models and Views
  */
 
 class Controller{
@@ -17,8 +17,7 @@ class Controller{
     
     if(file_exists($template)) {
       require_once $template;
-    } 
-    else {
+    } else {
       die("View Does Not Exist");
     }
   }

@@ -3,12 +3,13 @@
 
 <!-- Body  -->
 <h1><?= $data['title'] ?></h1>
+<p>
+  Don't forget to change the "config.php" file to math you Database. <br>
+  And the ".htaccess" in the "public" directory : 
+  RewriteBase /<strong>mvc</strong>/public =>
+  RewriteBase /<strong>YOUR PROJECT</strong>/public 
+</p>
 
-<ul>
-  <?php foreach($data['posts'] as $post) : ?>
-    <li><?= $post->title ?></li>
-  <?php endforeach; ?>
-</ul>
 
 <!-- Footer -->
 <?php require_once APP_ROOT . '/views/layout/footer.php' ?>

@@ -8,4 +8,9 @@ class Post {
 
   }
 
-}
+  public function getPosts() {
+    $this->model->query("SELECT * FROM posts");
+    return $this->model->getAll();
+  }
+
+} 

@@ -20,7 +20,7 @@ class Route {
 			$this->currentController =  ucwords($url[0]);
 			unset($url[0]);
 		}
-		// Require the controller and Instantiate it
+		// Require the Controller and Instantiate it
 		require_once self::PATH .'/'. $this->currentController . '.php'; 
 
 		$this->currentController = new $this->currentController ;
@@ -33,13 +33,19 @@ class Route {
 			unset($url[1]);
 		}
 
-		// get parameters
+		// get params
 		$this->params = $url ? array_values($url) : [];
 		call_user_func_array([$this->currentController, $this->currentMethod], $this->params);
 
 	}	
 
-
+	/* Returns:
+	 * [
+	 *  ['Controller'],
+	 *  ['method'],
+	 *  [...params]
+	 * ]
+	 */
 	public function getUrl(){
 		if(isset($_GET['url'])) {
 			$url = rtrim($_GET['url'], '/');
